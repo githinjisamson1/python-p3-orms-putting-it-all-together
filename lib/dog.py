@@ -43,7 +43,8 @@ class Dog:
         CURSOR.execute(sql, val)
         
         # update self.id from None/expanded save functionality/return list/access first
-        self.id = CURSOR.execute("SELECT last_insert_rowid() FROM dogs").fetchone()[0]
+        # self.id = CURSOR.execute("SELECT last_insert_rowid() FROM dogs").fetchone()[0]
+        self.id = CURSOR.lastrowid
         
         # !CONN.commit() -- sqlalchemy
         
